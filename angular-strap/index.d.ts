@@ -41,12 +41,20 @@ declare namespace mgcrea.ngStrap {
             keyboard?: boolean;
             show?: boolean;
             container?: string | boolean;
+            controller?: string | Function | Array<string | Function>;
+            controllerAs?: string;
+            resolve?: { [key: string]: any };
+            locals?: { [key: string]: any };
             template?: string;
             templateUrl?: string;
             contentTemplate?: string;
             prefixEvent?: string;
             id?: string;
             scope?: ng.IScope;
+            onShow?(modalInstance: IModal): void;
+            onBeforeShow?(modalInstance: IModal): void;
+            onHide?(modalInstance: IModal): void;
+            onBeforeHide?(modalInstance: IModal): void;
         }
 
         interface IModalScope extends ng.IScope {
